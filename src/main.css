@@ -1,0 +1,139 @@
+* {
+    padding:0 !important;
+    margin: 0 !important;
+} .element-body {
+    min-height: 90vh;
+    background-color:black;
+}
+.navbar {
+    display: block;
+    background-color: black;
+    color:white;
+    width: 100%;
+    min-height: 10vh;
+} .navbar .nav-cont-1 ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1.5em !important;
+    width: 60%;
+    min-height: 10vh;
+}.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 10vh;
+    width: 15rem;
+}.nav:hover {
+    cursor: pointer;
+    border-bottom: 1px solid rgb(8, 245, 0);
+    color: rgb(8, 245, 0);
+
+    animation: navColorChange .5s linear;
+} @keyframes navColorChange {
+    from {
+        color: rgb(255,255,255);
+        border-bottom: 1px solid rgb(0,0,0);
+        ;
+    }
+    to {
+        color: rgb(8, 245, 0);
+        border-bottom: 1px solid rgb(8, 245, 0);
+    }
+}.front-cont img {
+    max-height: 80vh;
+    width: auto;
+}
+
+.front-cont {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.talent {
+    display: flex;
+    font-size: 15pt;
+    align-items: center;
+    justify-content: center;
+    height: 12em;
+    width: 12em;
+    color:white;
+    background-color: green;
+    border-radius: 100%;
+    cursor: grab;
+} .t-1 {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    background: url('../public/img/react.png');
+    box-shadow: 5px 7px 20px 15px  rgba(0, 0, 0, 0.4) inset;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+} .t-2 {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    box-shadow: 12px 5px 20px 15px  rgba(0, 0, 0, 0.4) inset;
+    background: url('../public/img/laravel.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+} .t-2:hover {
+    animation: flooatL 1s infinite linear;
+} .t-3 {
+    position: absolute;
+    top: 65%;
+    left: 20%;
+    box-shadow: 5px 12px 20px 15px  rgba(0, 0, 0, 0.4) inset;
+    background: url('../public/img/git.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+} .t-4 {
+    position: absolute;
+    top: 15%;
+    right: 20%;
+    box-shadow: 5px 5px 20px 15px  rgba(0, 0, 0, 0.4) inset;
+    background: url('../public/img/ps.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+} .t-5 {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    box-shadow: 5px 5px 20px 15px   rgba(0, 0, 0, 0.4) inset;
+    background: url('../public/img/illu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+} .t-6 {
+    position: absolute;
+    top: 65%;
+    right: 20%;
+    box-shadow: 5px 5px 20px 15px  rgba(0, 0, 0, 0.4) inset;
+    border: 2px #231F20 solid;
+    background: url('../public/img/html.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+} .t-1:hover {
+    animation: flooat 4s linear infinite;
+} @keyframes flooat {
+    from {
+        transform: rotate(0);
+    } to {
+        transform: rotate(360deg);
+    }
+} @keyframes flooatL {
+    from {
+        transform: rotateX(0);
+        transform-origin: 15%;
+    } to {
+        transform: rotateY(360deg);
+        transform-origin: center;
+    }
+}
