@@ -54,16 +54,32 @@
 }.fcc {
     animation: ctostart 2s linear;
     justify-content: flex-start;
+}.fccB {
+    animation: ctoback 2s linear;
 } @keyframes ctostart {
     from {
+        width: fit-content;
         position: relative;
         top:0;
-        left: 35%;
+        left: 40.5%;
     } to {
+        width:fit-content;
         position: relative;
         top:0;
         left: 0;
     }
+} @keyframes ctoback {
+   from {
+        width:fit-content;
+        position: relative;
+        top:0;
+        left: 0;
+    } to {
+        width: fit-content;
+        position: relative;
+        top:0;
+        left: 41%;
+    } 
 }
 
 .talent {
@@ -77,6 +93,8 @@
     background-color: green;
     border-radius: 100%;
     cursor: grab;
+    transform: scale(1);
+    transition: transform .2s ease-in-out;
 } .t-1 {
     position: absolute;
     top: 15%;
@@ -91,6 +109,8 @@
     top: 65%;
     right: 110%;
     animation: fly 2s linear;
+} .tb-1 {
+    animation: flyB 2s linear;
 } .t-2 {
     position: absolute;
     top: 40%;
@@ -105,10 +125,12 @@
     top: 65%;
     right: 110%;
     animation: fly2 2s linear;
-} .t-2:hover {
-    animation: flooat .4s linear;
-    transform: scale(1.1);
-} .t-3 {
+} .tb-2 {
+    top: 40%;
+    /* left: 10%; */
+    right: 77.5%;
+    animation: flyB2 2s linear;
+}  .t-3 {
     position: absolute;
     top: 65%;
     /* left: 20%; */
@@ -122,9 +144,10 @@
     top: 65%;
     right: 110%;
     animation: fly3 2s linear;
-}.t-3:hover {
-    transform: scale(1.1);
-    animation: flooat .4s linear;
+} .tb-3 {
+    top: 65%;
+    right: 67.5%;
+    animation: flyB3 2s linear;
 } .t-4 {
     position: absolute;
     top: 15%;
@@ -138,9 +161,10 @@
     top: 65%;
     right: 110%;
     animation: fly4 2s linear;
-}.t-4:hover {
-    transform: scale(1.1);
-    animation: flooat .4s linear;
+}.tb-4 {
+    top: 15%;
+    right: 20%;
+    animation: flyB4 2s linear;
 } .t-5 {
     position: absolute;
     top: 40%;
@@ -154,10 +178,11 @@
     top: 65%;
     right: 110%;
     animation: fly5 2s linear;
-} .t-5:hover {
-    transform: scale(1.1);
-    animation: flooat .4s linear;
-} .t-6 {
+} .tb-5 {
+    top: 40%;
+    right: 10%;
+    animation: flyB5 2s linear;
+}  .t-6 {
     position: absolute;
     top: 65%;
     right: 20%;
@@ -171,20 +196,13 @@
     top: 65%;
     right: 110%;
     animation: fly6 1.5s linear;
-} .t-6:hover {
+} .tb-6 {
+    top: 65%;
+    right: 20%;
+    animation: flyB6 1.5s linear;
+} .talent:hover {
     transform: scale(1.1);
-    animation: flooat .4s linear;
-} .t-1:hover {
-    animation: flooat .4s linear;
-    transform: scale(1.1);
-} @keyframes flooat {
-    from {
-        transform: scale(1);
-    } to {
-        
-        transform: scale(1.1);
-    }
-} @keyframes fly {
+}  @keyframes fly {
     0% {
         top:15%;
         right:67.5%;
@@ -211,6 +229,33 @@
         right: 110%;
         transform: rotate(360deg);
     }
+} @keyframes flyB {
+     0% {
+        top: 65%;
+        right: 110%;
+        transform: rotate(360deg);
+    } 20% {
+        top: 65%;
+        right: 67.5%;
+        transform: rotate(288deg);
+    }40% {
+        top: 65%;
+        right: 20%;
+        transform: rotate(216deg);
+    }60% {
+        top: 40%;
+        right: 10%;
+        transform: rotate(144deg);
+
+    } 80% {
+        top: 15%;
+        right: 20%;
+        transform: rotate(72deg);
+    }100% {
+        top:15%;
+        right:67.5%;
+        transform: rotate(0);
+    } 
 } @keyframes fly2 {
     0% {
         top: 40%;
@@ -231,6 +276,29 @@
         top: 65%;
         right: 67.5%;
     } 100% {
+        top: 65%;
+        right: 110%;
+    }
+} @keyframes flyB2 {
+    100% {
+        top: 40%;
+        right: 77.5%;
+    } 83.3%{
+        top:15%;
+        right:67.5%;
+    } 66.64%{
+        top: 15%;
+        right: 20%;
+    } 49.98% {
+        top: 40%;
+        right: 10%;
+    }33.32%{
+        top: 65%;
+        right: 20%;
+    } 16.66% {
+        top: 65%;
+        right: 67.5%;
+    } 0% {
         top: 65%;
         right: 110%;
     }
@@ -260,21 +328,61 @@
         top: 65%;
         right: 110%;
     }
-}@keyframes fly4 {
-    0% {
+}@keyframes flyB3 {
+    100% {
+        top: 65%;
+        right: 67.5%;
+    } 85.68%{
+        top: 40%;
+        right: 77.5%;
+    } 71.4% {
+        top:15%;
+        right:67.5%;
+    }57.12%{
         top: 15%;
         right: 20%;
-    } 25% {
+    } 42.84% {
         top: 40%;
         right: 10%;
-    } 50% {
+    }  28.56% {
         top: 65%;
         right: 20%;
-    } 75% {
+    }  14.28% {
+        top: 65%;
+        right: 67.5%;
+    } 0% {
         top: 65%;
         right: 110%;
     }
-}@keyframes fly5 {
+} @keyframes fly4 {
+    0% {
+        top: 15%;
+        right: 20%;
+    } 33.33% {
+        top: 40%;
+        right: 10%;
+    } 66.66% {
+        top: 65%;
+        right: 20%;
+    } 100% {
+        top: 65%;
+        right: 110%;
+    }
+} @keyframes flyB4 {
+    100% {
+        top: 15%;
+        right: 20%;
+    } 66.66%{
+        top: 40%;
+        right: 10%;
+    }  33.33% {
+        top: 65%;
+        right: 20%;
+    } 0% {
+        top: 65%;
+        right: 110%;
+    }
+} @keyframes fly5 {
     0% {
         top: 40%;
         right: 10%;
@@ -285,7 +393,18 @@
         top: 65%;
         right: 110%;
     }
-}@keyframes fly6 {
+} @keyframes flyB5 {
+    100% {
+        top: 40%;
+        right: 10%;
+    } 50% {
+        top: 65%;
+        right: 20%;
+    } 0% {
+        top: 65%;
+        right: 110%;
+    }
+} @keyframes fly6 {
     from {
         top: 65%;
         right: 20%;
@@ -293,6 +412,14 @@
         top: 65%;
         right: 110%;
     }
+} @keyframes flyB6 {
+    from {
+        top: 65%;
+        right: 110%;
+    }to {
+        top: 65%;
+        right: 20%;
+    } 
 }
 
 .f-about {
@@ -310,11 +437,25 @@
     padding: 1.5em !important;
     background-color: green;
     border-radius: 15px;
-    animation: fadeIn 4s ease-in;
+}.fin{
+    
+    animation: fadeIn 1s ease-in;
+}.fout {
+    opacity: 0;
+    top: -2%;
+    animation: fadeOut 1s ease-out;
+    display: none;
 } @keyframes fadeIn {
     from {
+        top: -2%;
         opacity: 0;
-    } to {
+    }
+}  @keyframes fadeOut {
+    from {
+        top: 15%;
         opacity: 1;
+    } to {
+        top:-2%;
+        opacity: 0;
     }
 }
