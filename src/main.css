@@ -42,6 +42,7 @@
 }.front-cont img {
     max-height: 80vh;
     width: auto;
+    z-index: 100;
 }
 
 .front-cont {
@@ -50,6 +51,19 @@
     align-items: center;
     justify-content: center;
     user-select: none;
+}.fcc {
+    animation: ctostart 2s linear;
+    justify-content: flex-start;
+} @keyframes ctostart {
+    from {
+        position: relative;
+        top:0;
+        left: 35%;
+    } to {
+        position: relative;
+        top:0;
+        left: 0;
+    }
 }
 
 .talent {
@@ -66,32 +80,51 @@
 } .t-1 {
     position: absolute;
     top: 15%;
-    left: 20%;
+    right: 67.5%;
     background: url('../public/img/react.png');
     box-shadow: 5px 7px 20px 15px  rgba(0, 0, 0, 0.4) inset;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
+    z-index:10;
+} .ta-1 {
+    top: 65%;
+    right: 110%;
+    animation: fly 2s linear;
 } .t-2 {
     position: absolute;
     top: 40%;
-    left: 10%;
+    /* left: 10%; */
+    right: 77.5%;
     box-shadow: 12px 5px 20px 15px  rgba(0, 0, 0, 0.4) inset;
     background: url('../public/img/laravel.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
+} .ta-2 {
+    top: 65%;
+    right: 110%;
+    animation: fly2 2s linear;
 } .t-2:hover {
-    animation: flooatL 1s infinite linear;
+    animation: flooat .4s linear;
+    transform: scale(1.1);
 } .t-3 {
     position: absolute;
     top: 65%;
-    left: 20%;
+    /* left: 20%; */
+    right: 67.5%;
     box-shadow: 5px 12px 20px 15px  rgba(0, 0, 0, 0.4) inset;
     background: url('../public/img/git.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
+} .ta-3 {
+    top: 65%;
+    right: 110%;
+    animation: fly3 2s linear;
+}.t-3:hover {
+    transform: scale(1.1);
+    animation: flooat .4s linear;
 } .t-4 {
     position: absolute;
     top: 15%;
@@ -101,6 +134,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
+}.ta-4 {
+    top: 65%;
+    right: 110%;
+    animation: fly4 2s linear;
+}.t-4:hover {
+    transform: scale(1.1);
+    animation: flooat .4s linear;
 } .t-5 {
     position: absolute;
     top: 40%;
@@ -110,6 +150,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
+}.ta-5 {
+    top: 65%;
+    right: 110%;
+    animation: fly5 2s linear;
+} .t-5:hover {
+    transform: scale(1.1);
+    animation: flooat .4s linear;
 } .t-6 {
     position: absolute;
     top: 65%;
@@ -120,20 +167,154 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
+}.ta-6 {
+    top: 65%;
+    right: 110%;
+    animation: fly6 1.5s linear;
+} .t-6:hover {
+    transform: scale(1.1);
+    animation: flooat .4s linear;
 } .t-1:hover {
-    animation: flooat 4s linear infinite;
+    animation: flooat .4s linear;
+    transform: scale(1.1);
 } @keyframes flooat {
     from {
-        transform: rotate(0);
+        transform: scale(1);
     } to {
+        
+        transform: scale(1.1);
+    }
+} @keyframes fly {
+    0% {
+        top:15%;
+        right:67.5%;
+        transform: rotate(0);
+    } 20% {
+        top: 15%;
+        right: 20%;
+        transform: rotate(72deg);
+    } 40% {
+        top: 40%;
+        right: 10%;
+        transform: rotate(144deg);
+
+    } 60% {
+        top: 65%;
+        right: 20%;
+        transform: rotate(216deg);
+    } 80% {
+        top: 65%;
+        right: 67.5%;
+        transform: rotate(288deg);
+    } 100% {
+        top: 65%;
+        right: 110%;
         transform: rotate(360deg);
     }
-} @keyframes flooatL {
+} @keyframes fly2 {
+    0% {
+        top: 40%;
+        right: 77.5%;
+    } 16.66% {
+        top:15%;
+        right:67.5%;
+    } 33.32% {
+        top: 15%;
+        right: 20%;
+    } 49.98% {
+        top: 40%;
+        right: 10%;
+    } 66.64% {
+        top: 65%;
+        right: 20%;
+    } 83.3% {
+        top: 65%;
+        right: 67.5%;
+    } 100% {
+        top: 65%;
+        right: 110%;
+    }
+}@keyframes fly3 {
+    0% {
+        top: 65%;
+        right: 67.5%;
+    } 14.28% {
+        top: 40%;
+        right: 77.5%;
+    } 28.56% {
+        top:15%;
+        right:67.5%;
+    } 42.84% {
+        top: 15%;
+        right: 20%;
+    } 57.12% {
+        top: 40%;
+        right: 10%;
+    } 71.4% {
+        top: 65%;
+        right: 20%;
+    } 85.68% {
+        top: 65%;
+        right: 67.5%;
+    } 100% {
+        top: 65%;
+        right: 110%;
+    }
+}@keyframes fly4 {
+    0% {
+        top: 15%;
+        right: 20%;
+    } 25% {
+        top: 40%;
+        right: 10%;
+    } 50% {
+        top: 65%;
+        right: 20%;
+    } 75% {
+        top: 65%;
+        right: 110%;
+    }
+}@keyframes fly5 {
+    0% {
+        top: 40%;
+        right: 10%;
+    } 50% {
+        top: 65%;
+        right: 20%;
+    } 100% {
+        top: 65%;
+        right: 110%;
+    }
+}@keyframes fly6 {
     from {
-        transform: rotateX(0);
-        transform-origin: 15%;
+        top: 65%;
+        right: 20%;
     } to {
-        transform: rotateY(360deg);
-        transform-origin: center;
+        top: 65%;
+        right: 110%;
+    }
+}
+
+.f-about {
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}.f-about > div {
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    height:25vh;
+    width: 50%;
+    padding: 1.5em !important;
+    background-color: green;
+    border-radius: 15px;
+    animation: fadeIn 4s ease-in;
+} @keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
     }
 }
