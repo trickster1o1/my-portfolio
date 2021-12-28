@@ -1,0 +1,31 @@
+@media screen and (max-width: 411px) {
+    /* .dis {
+        display: none;
+    } */
+    
+     .navbar .nav-cont-1 {
+        background-color: green;
+        width: 100%;
+    } .talent {
+        display: none;
+    } .f-about div {
+        height: 75vh;
+        width: 97%;
+        top: 12%;
+        left: 1%;
+        z-index: 150;
+    } .fcc {
+        animation: none;
+    } .fccB {
+        animation: none;
+    } .fin {
+        animation-duration: .3s;
+    } .fout {
+        animation-duration: .3s;
+    } @keyframes fadeIn {
+        from {
+            top: -2%;
+            opacity: 1;
+        }
+    }
+}

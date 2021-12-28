@@ -1,4 +1,5 @@
 import './main.css';
+import './mobile.css';
 import { useEffect } from 'react';
 function Front() {
     useEffect(()=>{
@@ -75,6 +76,9 @@ function Front() {
                     <li className='nav' onClick={()=>magic('contact')} id='cont'>Contacts</li>
                 </ul>
             </div>
+            {/* <div className='dis'>
+                This is it
+            </div> */}
             </div>
             <div className='container-fluid element-body'>
                 <div className='main-body'>
@@ -85,7 +89,7 @@ function Front() {
                             <div  id="abt"><h2 align='center'>About</h2></div>
                     </div>
 
-                    <div className='talent t-1' id='t1'>
+                   <div className='talent t-1' id='t1'>
                     </div>
 
                     <div className='talent  t-2'  id='t2'>
@@ -105,7 +109,7 @@ function Front() {
                     
                 </div>
 
-            </div>
+            </div> 
         </>
     );
 }
