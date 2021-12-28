@@ -15,8 +15,10 @@
     display: flex;
     flex-direction: row;
     padding: 0 1.5em !important;
-    width: 60%;
+    width: 100%;
     min-height: 10vh;
+} .nav-cont-1 {
+    width: 60%;
 }.nav {
     display: flex;
     align-items: center;
@@ -438,12 +440,11 @@
     background-color: green;
     border-radius: 15px;
 }.fin{
-    
     animation: fadeIn 1s ease-in;
 }.fout {
     opacity: 0;
     top: -2%;
-    animation: fadeOut 1s ease-out;
+    animation: fadeOut 1s linear;
     display: none;
 } @keyframes fadeIn {
     from {
