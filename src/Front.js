@@ -1,6 +1,7 @@
 import './main.css';
 import './mobile.css';
 import { useEffect } from 'react';
+// import { gsap } from 'gsap';
 function Front() {
     useEffect(()=>{
         document.getElementById('hm').classList.add('active');
@@ -13,6 +14,8 @@ function Front() {
         const t5 = document.getElementById('t5');
         const t6 = document.getElementById('t6');
         const fc = document.getElementById('fc');
+        // const fade = gsap.timeline({defaults: {duration: '1'}});
+
 
         if(actLink === 'about') {
             document.getElementById('hm').classList.remove('active');
@@ -36,6 +39,8 @@ function Front() {
             document.getElementById('abt').style.display = 'block';
             document.getElementById('abt').classList.remove('fout');
             document.getElementById('abt').classList.add('fin');
+
+            // fade.to('.talent',{x:'-250%'});
 
         } else if(actLink === 'home') {
             document.getElementById('ab').classList.remove('active');
@@ -65,7 +70,8 @@ function Front() {
         }
         
     }
-
+    
+    
     return(
         <>  
             <div className="navbar">
@@ -108,7 +114,9 @@ function Front() {
                     </div>
                     
                 </div>
-
+                {/* <div className='d1'>Div 1</div>
+                <div className='d1'>Div 2</div>
+                <div className='d1'>Div 3</div> */}
             </div> 
         </>
     );
