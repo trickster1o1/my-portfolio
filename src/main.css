@@ -116,7 +116,6 @@
 } .t-2 {
     position: absolute;
     top: 40%;
-    /* left: 10%; */
     right: 77.5%;
     box-shadow: 12px 5px 20px 15px  rgba(0, 0, 0, 0.4) inset;
     background: url('../public/img/laravel.png');
@@ -129,13 +128,11 @@
     animation: fly2 2s linear;
 } .tb-2 {
     top: 40%;
-    /* left: 10%; */
     right: 77.5%;
     animation: flyB2 2s linear;
 }  .t-3 {
     position: absolute;
     top: 65%;
-    /* left: 20%; */
     right: 67.5%;
     box-shadow: 5px 12px 20px 15px  rgba(0, 0, 0, 0.4) inset;
     background: url('../public/img/git.png');
@@ -463,4 +460,12 @@
     cursor: pointer;
     border-bottom: 1px solid rgb(8, 245, 0);
     color: rgb(8, 245, 0);
-}
+} 
+/* .d1 {
+    display: block;
+    margin-bottom: 5px !important;
+    width: fit-content  ;
+    color:white;
+    background-color: blue;
+    padding: 25px !important;
+} */
