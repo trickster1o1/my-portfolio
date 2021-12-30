@@ -1,68 +1,62 @@
 import './main.css';
 import './mobile.css';
 import { useEffect } from 'react';
-// import { gsap } from 'gsap';
+import { gsap } from 'gsap';
 function Front() {
     useEffect(()=>{
         document.getElementById('hm').classList.add('active');
+        console.log(window.innerWidth);
     },[]);
-    let magic = (actLink) => {
-        const t1 = document.getElementById('t1');
-        const t2 = document.getElementById('t2');
-        const t3 = document.getElementById('t3');
-        const t4 = document.getElementById('t4');
-        const t5 = document.getElementById('t5');
-        const t6 = document.getElementById('t6');
-        const fc = document.getElementById('fc');
-        // const fade = gsap.timeline({defaults: {duration: '1'}});
-
+    const fade = gsap.timeline({defaults: {duration: '1'}});
+    let magic = (actLink) => {     
 
         if(actLink === 'about') {
             document.getElementById('hm').classList.remove('active');
             document.getElementById('cont').classList.remove('active');
             document.getElementById('ab').classList.add('active');
-            t1.classList.remove('tb-1');
-            t1.classList.add('ta-1');
-            t2.classList.remove('tb-2');
-            t2.classList.add('ta-2');
-            t3.classList.remove('tb-3');
-            t3.classList.add('ta-3');
-            t4.classList.remove('tb-4');
-            t4.classList.add('ta-4');
-            t5.classList.remove('tb-5');
-            t5.classList.add('ta-5');
-            t6.classList.remove('tb-6');
-            t6.classList.add('ta-6');
-            fc.classList.remove('fccB');
-            fc.classList.add('fcc');
+
+            fade.to('.t-1',{right:'110%',top:'-10%'});
+            fade.to('.t-2',{right:'110%',delay:-1});
+            fade.to('.t-3',{right:'110%',top:'70%',delay:-1});
+            fade.to('.t-4',{right:'-20%',top:'-10%',delay:-1});
+            fade.to('.t-5',{right:'-20%',delay:-1});
+            fade.to('.t-6',{right:'-20%',top:'70%',delay:-1});
+            fade.fromTo('.front-cont',{
+                width: 'fit-content',
+                position: 'relative',
+                top:'0',
+                left: '40.5%',
+            },{
+                width:'fit-content',
+                position: 'relative',
+                top:'0',
+                left: '0',
+                scale: 0.8,
+                delay:-1
+            });   
+            
+            if(fade.reversed()) {
+                window.location.reload();
+            }
+
 
             document.getElementById('abt').style.display = 'block';
             document.getElementById('abt').classList.remove('fout');
             document.getElementById('abt').classList.add('fin');
-
-            // fade.to('.talent',{x:'-250%'});
 
         } else if(actLink === 'home') {
             document.getElementById('ab').classList.remove('active');
             document.getElementById('cont').classList.remove('active');
             document.getElementById('hm').classList.add('active');
             
-            t1.classList.remove('ta-1');
-            t1.classList.add('tb-1');
-            t2.classList.remove('ta-2');
-            t2.classList.add('tb-2');
-            t3.classList.remove('ta-3');
-            t3.classList.add('tb-3');
-            t4.classList.remove('ta-4');
-            t4.classList.add('tb-4');
-            t5.classList.remove('ta-5');
-            t5.classList.add('tb-5');
-            t6.classList.remove('ta-6');
-            t6.classList.add('tb-6');
-            fc.classList.remove('fcc');
-            fc.classList.add('fccB');
+            if(!fade.reversed()){
+                fade.reverse();
+            }
+            
+
             document.getElementById('abt').classList.remove('fin');
             document.getElementById('abt').classList.add('fout');
+            
         } else {
             document.getElementById('ab').classList.remove('active');
             document.getElementById('hm').classList.remove('active');

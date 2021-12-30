@@ -54,7 +54,6 @@
     justify-content: center;
     user-select: none;
 }.fcc {
-    animation: ctostart 2s linear;
     justify-content: flex-start;
 }.fccB {
     animation: ctoback 2s linear;
