@@ -19,6 +19,7 @@
         top: 12%;
         left: 1%;
         z-index: 150;
+        overflow-y: scroll;
     } .fcc {
         animation: none;
     } .fccB {
