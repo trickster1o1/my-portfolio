@@ -506,7 +506,7 @@
     z-index: 950;
 } .leftSpace {
     display: inline-block;
-    padding-left: 5em !important;
+    padding-left: 3em !important;
 } form input[type='text'] {
     margin-bottom: .5em !important;
     width: 50%;
@@ -537,4 +537,9 @@
     from {
         opacity: 0;
     }
+}
+
+p.abt-cont {
+    font-size: 22pt;
+    
 }

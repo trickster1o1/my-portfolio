@@ -162,7 +162,10 @@ function Front() {
                     <div className='f-about'>
                             $space;<div  id="abt"><h2 align='center' className='abt-cont'>About</h2><h2 className='contact-cont' align='center'>Contact</h2>
                                 <p className='abt-cont'>
-                                    <span className='leftSpace'>A</span> web developer enthuist 
+                                    <span className='leftSpace'>A</span> web developer enthusiast trying to bring ideas into life. Designing the web UI is not my 
+                                    strong suit but I'm able to bring any idea you may have to vurtuality.<br /><br />
+                                    <span className='leftSpace'>T</span>hings i'm good with: ReactJS , Laravel, and raw HTML/CSS/JS. Some add on specialities: Photoshop and 
+                                    Illustrator.
                                 </p>
                                 <p align='center' className='contact-cont'>
                                     <form onSubmit={submitEmail}>
