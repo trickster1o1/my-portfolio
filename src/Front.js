@@ -5,41 +5,58 @@ import { gsap } from 'gsap';
 function Front() {
     useEffect(()=>{
         document.getElementById('hm').classList.add('active');
-        console.log(window.innerWidth);
+        const showtxt = gsap.timeline({defaults: {duration: '.1'}});
+        showtxt.from('.txt-appear', {
+            y: '52%',
+            stagger:.2
+        });
+        showtxt.to('.welcome-wipe', {
+                bottom: '200%',
+                duration: '1.5',
+                delay: .2
+        });
+        showtxt.to('.welcome-screen',{ 
+            display:'none',
+            delay:-1.2
+        })
     },[]);
     const fade = gsap.timeline({defaults: {duration: '1'}});
     let magic = (actLink) => {     
+            if(actLink === 'about') {
+                
+                    document.getElementById('hm').classList.remove('active');
+                    document.getElementById('cont').classList.remove('active');
+                    document.getElementById('ab').classList.add('active');
 
-        if(actLink === 'about') {
-            document.getElementById('hm').classList.remove('active');
-            document.getElementById('cont').classList.remove('active');
-            document.getElementById('ab').classList.add('active');
+                    let abt = document.querySelectorAll('.abt-cont');
+                    let cont = document.querySelectorAll('.contact-cont');
 
-            fade.to('.t-1',{right:'110%',top:'-10%'});
-            fade.to('.t-2',{right:'110%',delay:-1});
-            fade.to('.t-3',{right:'110%',top:'70%',delay:-1});
-            fade.to('.t-4',{right:'-20%',top:'-10%',delay:-1});
-            fade.to('.t-5',{right:'-20%',delay:-1});
-            fade.to('.t-6',{right:'-20%',top:'70%',delay:-1});
-            fade.fromTo('.front-cont',{
-                width: 'fit-content',
-                position: 'relative',
-                top:'0',
-                left: '40.5%',
-            },{
-                width:'fit-content',
-                position: 'relative',
-                top:'0',
-                left: '0',
-                scale: 0.8,
-                delay:-1
-            });   
-            
-            if(fade.reversed()) {
-                window.location.reload();
+                    abt.forEach(a => {
+                        a.style.display = 'block';
+                    });
+
+                    cont.forEach(c => {
+                        c.style.display = 'none';
+                    })
+                
+                if(window.innerWidth > 450) {
+                    fade.to('.t-1',{right:'110%',top:'-10%'});
+                    fade.to('.t-2',{right:'110%',delay:-1});
+                    fade.to('.t-3',{right:'110%',top:'90%',delay:-1});
+                    fade.to('.t-4',{right:'-20%',top:'-10%',delay:-1});
+                    fade.to('.t-5',{right:'-20%',delay:-1});
+                    fade.to('.t-6',{right:'-20%',top:'90%',delay:-1});
+                    fade.to('.front-cont',{
+                        top:'0',
+                        left: '8%',
+                        scale: 0.8,
+                        delay:-1
+                    });   
+                    
+                    if(fade.reversed()) {
+                        fade.play();
+                    }
             }
-
-
             document.getElementById('abt').style.display = 'block';
             document.getElementById('abt').classList.remove('fout');
             document.getElementById('abt').classList.add('fin');
@@ -50,7 +67,7 @@ function Front() {
             document.getElementById('hm').classList.add('active');
             
             if(!fade.reversed()){
-                fade.reverse();
+                fade.reverse(1);
             }
             
 
@@ -61,6 +78,17 @@ function Front() {
             document.getElementById('ab').classList.remove('active');
             document.getElementById('hm').classList.remove('active');
             document.getElementById('cont').classList.add('active');
+            
+            let abt = document.querySelectorAll('.abt-cont');
+            let cont = document.querySelectorAll('.contact-cont')
+
+            abt.forEach(a => {
+                a.style.display = 'none';
+            });
+
+            cont.forEach(c => {
+                c.style.display = 'block';
+            })
         }
         
     }
@@ -68,6 +96,14 @@ function Front() {
     
     return(
         <>  
+            <div className='welcome-screen'>
+                <div>
+                    <span className='txt-appear'>W</span><span className='txt-appear'>E</span><span className='txt-appear'>L</span><span className='txt-appear'>C</span><span className='txt-appear'>O</span><span className='txt-appear'>M</span><span className='txt-appear'>E</span> <span className='txt-appear'>T</span><span className='txt-appear'>O</span> <span className='txt-appear'>M</span><span className='txt-appear'>Y</span> <span className='txt-appear'>P</span><span className='txt-appear'>O</span><span className='txt-appear'>R</span><span className='txt-appear'>T</span><span className='txt-appear'>F</span><span className='txt-appear'>O</span><span className='txt-appear'>L</span><span className='txt-appear'>I</span><span className='txt-appear'>O</span> 
+                    <div className='txt-block'></div>
+                </div>
+            </div>
+            <div className='welcome-wipe'>
+            </div>
             <div className="navbar">
             <div className='nav-cont-1'>
                 <ul>
@@ -86,7 +122,21 @@ function Front() {
                         <img src="/img/mainPic.png" alt="error404" />
                     </div>
                     <div className='f-about'>
-                            <div  id="abt"><h2 align='center'>About</h2></div>
+                            $space;<div  id="abt"><h2 align='center' className='abt-cont'>About</h2><h2 className='contact-cont' align='center'>Contact</h2>
+                                <p className='abt-cont'>
+                                    <span className='leftSpace'>A</span> web developer enthuist 
+                                </p>
+                                <p align='center' className='contact-cont'>
+                                    <form>
+                                        <input type="text" placeholder='Name' /> <br />
+                                        <input type="text" placeholder='Email' /> <br />
+                                        <textarea placeholder='Message' /> <br />
+                                        <div align='right'>
+                                        <input type="submit" />
+                                        </div>
+                                    </form>
+                                </p>
+                            </div>
                     </div>
 
                    <div className='talent t-1' id='t1'>
