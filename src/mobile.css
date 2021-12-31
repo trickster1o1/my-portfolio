@@ -2,7 +2,13 @@
     /* .dis {
         display: none;
     } */
-    
+    .front-cont {
+        display: flex;
+        align-items: center;
+        width: auto;
+        justify-content: center;
+        position: unset;
+    }
      .navbar .nav-cont-1 {
         width: 100%;
     } .talent {
@@ -26,5 +32,10 @@
             top: -2%;
             opacity: 1;
         }
+    } .welcome-screen > div {
+        font-size: 20pt;
+    }.txt-block {
+        position: absolute;
+        top: 51.8%;
     }
 }
