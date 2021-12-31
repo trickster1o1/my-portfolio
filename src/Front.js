@@ -2,6 +2,7 @@ import './main.css';
 import './mobile.css';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
+import emailjs from 'emailjs-com';
 function Front() {
     useEffect(()=>{
         document.getElementById('hm').classList.add('active');
@@ -20,6 +21,20 @@ function Front() {
             delay:-1.2
         })
     },[]);
+
+    function submitEmail(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_l75k0zr', 'template_sutqezz', e.target, 'user_n516TXiTaLINT6nf1PZHU')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+
+        e.target.reset();
+    }
+
     const fade = gsap.timeline({defaults: {duration: '1'}});
     let magic = (actLink) => {     
             if(actLink === 'about') {
@@ -56,7 +71,7 @@ function Front() {
                     if(fade.reversed()) {
                         fade.play();
                     }
-            }
+                }
             document.getElementById('abt').style.display = 'block';
             document.getElementById('abt').classList.remove('fout');
             document.getElementById('abt').classList.add('fin');
@@ -89,6 +104,29 @@ function Front() {
             cont.forEach(c => {
                 c.style.display = 'block';
             })
+
+            if(window.innerWidth > 450) {
+                fade.to('.t-1',{right:'110%',top:'-10%'});
+                fade.to('.t-2',{right:'110%',delay:-1});
+                fade.to('.t-3',{right:'110%',top:'90%',delay:-1});
+                fade.to('.t-4',{right:'-20%',top:'-10%',delay:-1});
+                fade.to('.t-5',{right:'-20%',delay:-1});
+                fade.to('.t-6',{right:'-20%',top:'90%',delay:-1});
+                fade.to('.front-cont',{
+                    top:'0',
+                    left: '8%',
+                    scale: 0.8,
+                    delay:-1
+                });   
+                
+                if(fade.reversed()) {
+                    fade.play();
+                }
+            }
+
+            document.getElementById('abt').style.display = 'block';
+            document.getElementById('abt').classList.remove('fout');
+            document.getElementById('abt').classList.add('fin');
         }
         
     }
@@ -127,10 +165,11 @@ function Front() {
                                     <span className='leftSpace'>A</span> web developer enthuist 
                                 </p>
                                 <p align='center' className='contact-cont'>
-                                    <form>
-                                        <input type="text" placeholder='Name' /> <br />
-                                        <input type="text" placeholder='Email' /> <br />
-                                        <textarea placeholder='Message' /> <br />
+                                    <form onSubmit={submitEmail}>
+                                        <input type="text" placeholder='Name' name='name' /> <br />
+                                        <input type="text" placeholder='Subject' name='subject' /> <br />
+                                        <input type="text" placeholder='Email' name='email' /> <br />
+                                        <textarea placeholder='Message' name='message' /> <br />
                                         <div align='right'>
                                         <input type="submit" />
                                         </div>
