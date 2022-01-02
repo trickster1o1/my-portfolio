@@ -1,0 +1,46 @@
+.api-nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+} .api-nav > nav {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    justify-content: center;
+    width: 15rem;
+    cursor: pointer;
+    
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+} .api-nav > nav:hover {
+    border-bottom: 2px solid red;
+    color:red;
+    font-weight: bold;
+    
+    transition: border-bottom .5s ease-in-out, color .5s ease-in-out, font-weight .1s ease-in-out;
+} .api-body {
+    padding-top: 2em !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} .we-span {
+    padding-top: 1em !important;
+} .we-span > div {
+    text-align: center;
+    font-size: 15pt;
+    margin-top: -15px !important;
+}.we-calc {
+    display:flex;
+    justify-content: space-around;
+}.we-calc > div {
+    border-top: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 15px !important;
+}.we-calc > div:nth-child(2) {
+    border-left: 1px solid rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0,0,0,0.2);
+}.we-calc > div:last-child {
+    border-right: 1px solid rgba(0,0,0,0.2);
+}.we-calc > div:first-child {
+    border-left: 1px solid rgba(0,0,0,0.2);
+}
