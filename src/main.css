@@ -18,7 +18,7 @@
     padding: 0 1.5em !important;
     width: 100%;
     min-height: 10vh;
-} .nav-cont-1 {
+}.nav-cont-1 {
     width: 60%;
 }.nav {
     display: flex;
@@ -37,10 +37,6 @@
         color: rgb(255,255,255);
         border-bottom: 1px solid rgb(0,0,0);
         ;
-    }
-    to {
-        color: rgb(8, 245, 0);
-        border-bottom: 1px solid rgb(8, 245, 0);
     }
 }.front-cont img {
     max-height: 80vh;
@@ -542,4 +538,25 @@
 p.abt-cont {
     font-size: 22pt;
     
+} .api-link {
+    width: 15rem;
+    height: 10vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(0, 0, 0);
+} .api-link:hover {
+    cursor: pointer;
+    border-bottom: 1px solid rgb(8, 245, 0);
+    transition: border-bottom .5s ease-in-out;
+} .api-link a {
+    text-decoration: none;
+    color: white;
+} .api-link:hover a {
+    color: rgb(8, 245, 0);
+    transition: color .5s ease-in-out;
 }

@@ -3,6 +3,7 @@ import './mobile.css';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import emailjs from 'emailjs-com';
+import { Link, useNavigate } from 'react-router-dom';
 function Front() {
     useEffect(()=>{
         document.getElementById('hm').classList.add('active');
@@ -22,6 +23,7 @@ function Front() {
         })
     },[]);
 
+    const navigate = useNavigate();
     function submitEmail(e) {
         e.preventDefault();
 
@@ -130,7 +132,9 @@ function Front() {
         }
         
     }
-    
+    function returnApi() {
+        navigate('/apiTest');
+    }
     
     return(
         <>  
@@ -149,10 +153,8 @@ function Front() {
                     <li className='nav' onClick={()=>magic('about')} id="ab">About</li>
                     <li className='nav' onClick={()=>magic('contact')} id='cont'>Contacts</li>
                 </ul>
+                <nav className='api-link' onClick={returnApi}><Link to='/apiTest'>APItest</Link></nav>
             </div>
-            {/* <div className='dis'>
-                This is it
-            </div> */}
             </div>
             <div className='container-fluid element-body'>
                 <div className='main-body'>

@@ -38,5 +38,16 @@
     }.txt-block {
         position: absolute;
         top: 51.8%;
+    } .api-link > a{
+        display: none;
+    } .api-link:after {
+        content: '>';
+        width: fit-content;
+    } .api-link {
+        width: fit-content;
+    }#back a span {
+        display: none;
+    }#back a:after {
+        content: '<';
     }
 }

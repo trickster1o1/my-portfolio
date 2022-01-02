@@ -1,5 +1,6 @@
 import './ApiTest.css';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 function ApiTest() {
 
     const [weather,setWeather] = useState([]);
@@ -31,6 +32,8 @@ function ApiTest() {
 
     return(
         <>
+        
+            <nav id="back"><Link to='/'><span>Back</span></Link></nav>
             <div className="api-nav">
                 <nav id='wth'>Weather</nav>
                 <nav>Another</nav>
@@ -41,7 +44,7 @@ function ApiTest() {
                 <div className='api-body'>
                     <div> <h2>{weather.location.country + ", " + weather.location.name}</h2> </div>
                     <div  className='we-span'><img alt="error404" src={weather.current.condition.icon} />
-                        <div>{weather.current.temp_c+"C"}</div>
+                        <div>{weather.current.temp_c}&deg;C</div>
                         <span style={{'color':'rgba(0,0,0,0.5)','fontSize':'10pt','display':'block'}}>{weather.current.condition.text}</span>
                     </div>
                     <div className='we-calc'>
