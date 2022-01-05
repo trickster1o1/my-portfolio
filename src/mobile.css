@@ -1,4 +1,4 @@
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 731px) {
     /* .dis {
         display: none;
     } */
@@ -11,8 +11,28 @@
     }
      .navbar .nav-cont-1 {
         width: 100%;
+    } .t-1,.t-2,.t-3,.t-4,.t-5,.t-6{
+        position:unset;
+        top:unset;
+        left: unset;
+        right: unset;
     } .talent {
-        display: none;
+        position: absolute;
+        bottom: 5%;
+        height: 2.5em;
+        width: 2.5em;
+    } .t-1 {
+        left: 3%;
+    } .t-2 {
+        left: 19%;
+    } .t-3 {
+        left: 35%;
+    } .t-4 {
+        right: 35%;
+    } .t-5 {
+        right: 19%;
+    } .t-6 {
+        right: 3%;
     } .f-about div {
         height: 75vh;
         width: 97%;
@@ -49,5 +69,14 @@
         display: none;
     }#back a:after {
         content: '<';
+    }p.abt-cont {
+        font-size: 15pt;
+    }h2.abt-cont {
+        font-size: 25pt;
+    } #gameNews {
+        width: 100vw;
+    } .news {
+        width: 90vw !important;
+        overflow-x: scroll;
     }
 }

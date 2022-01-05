@@ -51,4 +51,36 @@
     text-decoration: none;
     color: black;
     font-weight: bold;
+}.load-symb {
+    display: flex;
+    justify-content: center;
+} .api-nav-active {
+    border-bottom: 2px solid red !important;
+    color:red;
+    font-weight: bold;
+} .news{
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 15px;
+    align-self: flex-start;
+    padding: 15px !important;
+    margin-bottom: .5em !important;
+} #gameNews {
+    display: flex;
+    justify-content: center;
+} .news-title {
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: .5em !important;
+} .news-src {
+    color: rgba(0,0,0,0.5);
+    font-size: 8pt;
+    padding-bottom: .3em !important;
+} .pagi-div {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+} .page-link {
+    padding: 10px !important;
+} .news-url a {
+    text-decoration: none;
 }
