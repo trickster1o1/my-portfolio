@@ -559,4 +559,9 @@ p.abt-cont {
 } .api-link:hover a {
     color: rgb(8, 245, 0);
     transition: color .5s ease-in-out;
+} h2.abt-cont {
+    font-size: 32pt;
+} p.abt-cont {
+    text-align: justify;
+    text-justify: inter-word;
 }
