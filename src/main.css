@@ -2,8 +2,9 @@
     padding:0 !important;
     margin: 0 !important;
 } .element-body {
-    min-height: 90vh;
-    background-color:black;
+    max-height: 90vh;
+    background-color: black;
+    overflow-y: auto;
 }
 .navbar {
     display: block;
@@ -26,6 +27,7 @@
     justify-content: center;
     min-height: 10vh;
     width: 15rem;
+    border-bottom: 1px solid black;
 }.nav:hover {
     cursor: pointer;
     border-bottom: 1px solid rgb(8, 245, 0);
@@ -89,7 +91,6 @@
     height: 12em;
     width: 12em;
     color:white;
-    background-color: green;
     border-radius: 100%;
     cursor: grab;
     transform: scale(1);
@@ -99,7 +100,6 @@
     top: 15%;
     right: 67.5%;
     background: url('../public/img/react.png');
-    box-shadow: 5px 7px 20px 15px  rgba(0, 0, 0, 0.4) inset;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -114,7 +114,6 @@
     position: absolute;
     top: 40%;
     right: 77.5%;
-    box-shadow: 12px 5px 20px 15px  rgba(0, 0, 0, 0.4) inset;
     background: url('../public/img/laravel.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -131,7 +130,6 @@
     position: absolute;
     top: 65%;
     right: 67.5%;
-    box-shadow: 5px 12px 20px 15px  rgba(0, 0, 0, 0.4) inset;
     background: url('../public/img/git.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -148,7 +146,6 @@
     position: absolute;
     top: 15%;
     right: 20%;
-    box-shadow: 5px 5px 20px 15px  rgba(0, 0, 0, 0.4) inset;
     background: url('../public/img/ps.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -165,7 +162,6 @@
     position: absolute;
     top: 40%;
     right: 10%;
-    box-shadow: 5px 5px 20px 15px   rgba(0, 0, 0, 0.4) inset;
     background: url('../public/img/illu.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -182,7 +178,6 @@
     position: absolute;
     top: 65%;
     right: 20%;
-    box-shadow: 5px 5px 20px 15px  rgba(0, 0, 0, 0.4) inset;
     border: 2px #231F20 solid;
     background: url('../public/img/html.png');
     background-repeat: no-repeat;

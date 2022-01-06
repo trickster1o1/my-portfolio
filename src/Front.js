@@ -162,7 +162,7 @@ function Front() {
                         <img src="/img/mainPic.png" alt="error404" />
                     </div>
                     <div className='f-about'>
-                            $space;<div  id="abt"><h2 align='center' className='abt-cont'>About</h2><h2 className='contact-cont' align='center'>Contact</h2>
+                            <div  id="abt"><h2 align='center' className='abt-cont'>About</h2><h2 className='contact-cont' align='center'>Contact</h2>
                                 <p className='abt-cont'>
                                     <span className='leftSpace'>A</span> web developer enthusiast trying to bring ideas into life. Designing the web UI is not my 
                                     strong suit but I'm able to bring any idea you may have to vurtuality.<br /><br />
@@ -202,9 +202,7 @@ function Front() {
                     </div>
                     
                 </div>
-                {/* <div className='d1'>Div 1</div>
-                <div className='d1'>Div 2</div>
-                <div className='d1'>Div 3</div> */}
+
             </div> 
         </>
     );
