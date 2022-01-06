@@ -67,6 +67,8 @@
 } #gameNews {
     display: flex;
     justify-content: center;
+    max-height: 88vh;
+    overflow-y: scroll;
 } .news-title {
     font-weight: 500;
     border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -83,4 +85,6 @@
     padding: 10px !important;
 } .news-url a {
     text-decoration: none;
-}
+} .news-url {
+    overflow: hidden;
+} 

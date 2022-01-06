@@ -2,6 +2,9 @@
     /* .dis {
         display: none;
     } */
+    .element-body {
+        overflow: hidden;
+    }
     .front-cont {
         display: flex;
         align-items: center;
@@ -77,6 +80,5 @@
         width: 100vw;
     } .news {
         width: 90vw !important;
-        overflow-x: scroll;
     }
 }

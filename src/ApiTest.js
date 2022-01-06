@@ -133,7 +133,7 @@ function ApiTest() {
             <div id='gameNews'>
             { data ?
                 <div className='api-body'>
-                    {displayProd}
+                    {displayProd ? displayProd : "LOADING..."}
                 <div style={{'display':'flex','justifyContent':'center','alignItems':'center','minHeight':'7em'}}>
                 {  pageCount > 1 ?
                     <ReactPaginate
