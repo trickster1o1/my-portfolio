@@ -36,7 +36,6 @@ function Front() {
 
         e.target.reset();
     }
-
     const fade = gsap.timeline({defaults: {duration: '1'}});
     let magic = (actLink) => {     
             if(actLink === 'about') {
@@ -135,7 +134,6 @@ function Front() {
     function returnApi() {
         navigate('/apiTest');
     }
-    
     return(
         <>  
             <div className='welcome-screen'>
