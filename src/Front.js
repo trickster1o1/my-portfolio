@@ -2,12 +2,16 @@ import './main.css';
 import './mobile.css';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import emailjs from 'emailjs-com';
 import { Link, useNavigate } from 'react-router-dom';
 function Front() {
     useEffect(()=>{
         document.getElementById('hm').classList.add('active');
         const showtxt = gsap.timeline({defaults: {duration: '.1'}});
+        showtxt.to('body',{
+            overflowY: 'hidden'
+        });
         showtxt.from('.txt-appear', {
             y: '52%',
             stagger:.2
@@ -20,7 +24,82 @@ function Front() {
         showtxt.to('.welcome-screen',{ 
             display:'none',
             delay:-1.2
-        })
+        });
+        
+        if(window.innerWidth > 750) {
+            
+        showtxt.to('body',{
+            overflowY: 'auto',
+            delay: -1
+        });
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.to('.f-abt', {
+                scrollTrigger: {
+                    trigger: '.f-abt',
+                    toggleActions: 'restart pause resume pause',
+                },
+                x:-1050,
+                duration: 1
+            });
+
+            gsap.to('.f-cnt', {
+                scrollTrigger: {
+                    trigger: '.f-cnt',
+                    toggleActions: 'restart pause resume pause',
+                },
+                x:-1250,
+                duration: 1
+            });
+
+            gsap.to('.front-cont',{
+                scrollTrigger: {
+                    trigger: '.f-abt',
+                    scrub: true,
+                    toggleActions: 'restart pause resume pause'
+                    
+                },
+                top:'0',
+                left: '20%',
+                scale: 0.8,
+            });  
+            gsap.to('.t-1',{
+                scrollTrigger: {
+                    trigger: '.f-abt',
+                    scrub: true,
+                    toggleActions: 'restart pause resume pause'
+                },
+                right:'110%',top:'-10%'})
+          
+            gsap.to('.t-2',{scrollTrigger: {
+                trigger: '.f-abt',
+                scrub: true,
+                toggleActions: 'restart pause resume pause'
+            },right:'110%',delay:-1});
+            gsap.to('.t-3',{scrollTrigger: {
+                trigger: '.f-abt',
+                scrub: true,
+                toggleActions: 'restart pause resume pause'
+            },right:'110%',top:'90%',delay:-1});
+            gsap.to('.t-4',{scrollTrigger: {
+                trigger: '.f-abt',
+                scrub: true,
+                toggleActions: 'restart pause resume pause'
+            },right:'-20%',top:'-10%',delay:-1});
+            gsap.to('.t-5',{scrollTrigger: {
+                trigger: '.f-abt',
+                scrub: true,
+                toggleActions: 'restart pause resume pause'
+            },right:'-20%',delay:-1});
+            gsap.to('.t-6',{scrollTrigger: {
+                trigger: '.f-abt',
+                scrub: true,
+                toggleActions: 'restart pause resume pause'
+            },right:'-20%',top:'90%',delay:-1});
+        } else {
+            document.getElementById('f-abt').style.display = "none";
+            document.getElementById('f-cnt').style.display = "none";
+        }
     },[]);
 
     const navigate = useNavigate();
@@ -201,7 +280,34 @@ function Front() {
                     
                 </div>
 
-            </div> 
+                <div className='f-abt' id = 'f-abt'>
+                        <div><h2 align='center' className='abt-cont'>About</h2>
+                            <p className='abt-cnt'>
+                                <span className='leftSpace'>A</span> web developer enthusiast trying to bring ideas into life. Designing the web UI is not my 
+                                strong suit but I'm able to bring any idea you may have to vurtuality.<br /><br />
+                                <span className='leftSpace'>T</span>hings i'm good with: ReactJS , Laravel, and raw HTML/CSS/JS. Some add on specialities: Photoshop and 
+                                Illustrator.
+                            </p>
+                        </div>
+                </div>
+
+                <div className='f-cnt' id = 'f-cnt'>
+                        <div><h2 align='center' className='abt-cont'>Contact</h2>
+                            <p className='abt-cnt'>
+                            <form onSubmit={submitEmail}>
+                                <input type="text" placeholder='Name' name='name' /> <br />
+                                <input type="text" placeholder='Subject' name='subject' /> <br />
+                                <input type="text" placeholder='Email' name='email' /> <br />
+                                <textarea placeholder='Message' name='message' /> <br />
+                                <div align='right'>
+                                <input type="submit" />
+                                </div>
+                            </form>
+                            </p>
+                        </div>
+                </div>
+
+                </div> 
         </>
     );
 }

@@ -2,9 +2,10 @@
     padding:0 !important;
     margin: 0 !important;
 } .element-body {
-    max-height: 90vh;
+    min-height: 90vh;
     background-color: black;
     overflow-y: auto;
+    padding-bottom: 160em !important;
 }
 .navbar {
     display: block;
@@ -14,7 +15,7 @@
     min-height: 10vh;
     z-index: 100;
 } .navbar .nav-cont-1 ul {
-    display: flex;
+    display: none;
     flex-direction: row;
     padding: 0 1.5em !important;
     width: 100%;
@@ -49,8 +50,8 @@
 .front-cont {
     min-height: 90vh;
     width: fit-content;
-    position: relative;
-    top:0;
+    position: fixed;
+    top:15vh;
     left: 40.5%;
     user-select: none;
 }.fcc {
@@ -193,226 +194,7 @@
     animation: flyB6 1.5s linear;
 } .talent:hover {
     transform: scale(1.1);
-}/*  @keyframes fly {
-    0% {
-        top:15%;
-        right:67.5%;
-        transform: rotate(0);
-    } 20% {
-        top: 15%;
-        right: 20%;
-        transform: rotate(72deg);
-    } 40% {
-        top: 40%;
-        right: 10%;
-        transform: rotate(144deg);
-
-    } 60% {
-        top: 65%;
-        right: 20%;
-        transform: rotate(216deg);
-    } 80% {
-        top: 65%;
-        right: 67.5%;
-        transform: rotate(288deg);
-    } 100% {
-        top: 65%;
-        right: 110%;
-        transform: rotate(360deg);
-    }
-} @keyframes flyB {
-     0% {
-        top: 65%;
-        right: 110%;
-        transform: rotate(360deg);
-    } 20% {
-        top: 65%;
-        right: 67.5%;
-        transform: rotate(288deg);
-    }40% {
-        top: 65%;
-        right: 20%;
-        transform: rotate(216deg);
-    }60% {
-        top: 40%;
-        right: 10%;
-        transform: rotate(144deg);
-
-    } 80% {
-        top: 15%;
-        right: 20%;
-        transform: rotate(72deg);
-    }100% {
-        top:15%;
-        right:67.5%;
-        transform: rotate(0);
-    } 
-} @keyframes fly2 {
-    0% {
-        top: 40%;
-        right: 77.5%;
-    } 16.66% {
-        top:15%;
-        right:67.5%;
-    } 33.32% {
-        top: 15%;
-        right: 20%;
-    } 49.98% {
-        top: 40%;
-        right: 10%;
-    } 66.64% {
-        top: 65%;
-        right: 20%;
-    } 83.3% {
-        top: 65%;
-        right: 67.5%;
-    } 100% {
-        top: 65%;
-        right: 110%;
-    }
-} @keyframes flyB2 {
-    100% {
-        top: 40%;
-        right: 77.5%;
-    } 83.3%{
-        top:15%;
-        right:67.5%;
-    } 66.64%{
-        top: 15%;
-        right: 20%;
-    } 49.98% {
-        top: 40%;
-        right: 10%;
-    }33.32%{
-        top: 65%;
-        right: 20%;
-    } 16.66% {
-        top: 65%;
-        right: 67.5%;
-    } 0% {
-        top: 65%;
-        right: 110%;
-    }
-}@keyframes fly3 {
-    0% {
-        top: 65%;
-        right: 67.5%;
-    } 14.28% {
-        top: 40%;
-        right: 77.5%;
-    } 28.56% {
-        top:15%;
-        right:67.5%;
-    } 42.84% {
-        top: 15%;
-        right: 20%;
-    } 57.12% {
-        top: 40%;
-        right: 10%;
-    } 71.4% {
-        top: 65%;
-        right: 20%;
-    } 85.68% {
-        top: 65%;
-        right: 67.5%;
-    } 100% {
-        top: 65%;
-        right: 110%;
-    }
-}@keyframes flyB3 {
-    100% {
-        top: 65%;
-        right: 67.5%;
-    } 85.68%{
-        top: 40%;
-        right: 77.5%;
-    } 71.4% {
-        top:15%;
-        right:67.5%;
-    }57.12%{
-        top: 15%;
-        right: 20%;
-    } 42.84% {
-        top: 40%;
-        right: 10%;
-    }  28.56% {
-        top: 65%;
-        right: 20%;
-    }  14.28% {
-        top: 65%;
-        right: 67.5%;
-    } 0% {
-        top: 65%;
-        right: 110%;
-    }
-} @keyframes fly4 {
-    0% {
-        top: 15%;
-        right: 20%;
-    } 33.33% {
-        top: 40%;
-        right: 10%;
-    } 66.66% {
-        top: 65%;
-        right: 20%;
-    } 100% {
-        top: 65%;
-        right: 110%;
-    }
-} @keyframes flyB4 {
-    100% {
-        top: 15%;
-        right: 20%;
-    } 66.66%{
-        top: 40%;
-        right: 10%;
-    }  33.33% {
-        top: 65%;
-        right: 20%;
-    } 0% {
-        top: 65%;
-        right: 110%;
-    }
-} @keyframes fly5 {
-    0% {
-        top: 40%;
-        right: 10%;
-    } 50% {
-        top: 65%;
-        right: 20%;
-    } 100% {
-        top: 65%;
-        right: 110%;
-    }
-} @keyframes flyB5 {
-    100% {
-        top: 40%;
-        right: 10%;
-    } 50% {
-        top: 65%;
-        right: 20%;
-    } 0% {
-        top: 65%;
-        right: 110%;
-    }
-} @keyframes fly6 {
-    from {
-        top: 65%;
-        right: 20%;
-    } to {
-        top: 65%;
-        right: 110%;
-    }
-} @keyframes flyB6 {
-    from {
-        top: 65%;
-        right: 110%;
-    }to {
-        top: 65%;
-        right: 20%;
-    } 
-} */
-    
+}    
 .f-about {
     color: white;
     width: 100%;
@@ -454,15 +236,6 @@
     border-bottom: 1px solid rgb(8, 245, 0);
     color: rgb(8, 245, 0);
 } 
-/* .d1 {
-    display: block;
-    margin-bottom: 5px !important;
-    width: fit-content  ;
-    color:white;
-    background-color: blue;
-    padding: 25px !important;
-} */
-
 .welcome-screen {
     position: absolute;
     top: 0;
@@ -559,4 +332,31 @@ p.abt-cont {
 } p.abt-cont {
     text-align: justify;
     text-justify: inter-word;
+} .f-abt > div {
+    background-color: green;
+    display: block;
+    padding: 15px !important;
+    font-size: 17pt;
+} .f-abt {
+    width: 45%;
+    position: absolute;
+    top: 110%;
+    right: -50%;
+} .abt-cnt {
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 15px !important;
+} .f-cnt {
+    width: 25%;
+    position: absolute;
+    top: 180%;
+    right: -50%;
+} .f-cnt > div {
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    padding: 15px !important;
+    align-items: center;
+} .f-cnt form input[type="text"] , .f-cnt form textarea {
+    width: 20em;
 }

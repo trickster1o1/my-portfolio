@@ -4,6 +4,7 @@
     } */
     .element-body {
         overflow: hidden;
+        padding-bottom:0 !important;
     }
     .front-cont {
         display: flex;
@@ -80,5 +81,7 @@
         width: 100vw;
     } .news {
         width: 90vw !important;
+    }.navbar .nav-cont-1 ul { 
+        display: flex;
     }
 }
