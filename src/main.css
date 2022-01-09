@@ -4,8 +4,8 @@
 } .element-body {
     min-height: 90vh;
     background-color: black;
-    overflow-y: auto;
-    padding-bottom: 160em !important;
+    /* overflow-y: auto; */
+    /* padding-bottom: 160em !important; */
 }
 .navbar {
     display: block;
@@ -15,7 +15,7 @@
     min-height: 10vh;
     z-index: 100;
 } .navbar .nav-cont-1 ul {
-    display: none;
+    display: flex;
     flex-direction: row;
     padding: 0 1.5em !important;
     width: 100%;
@@ -332,7 +332,8 @@ p.abt-cont {
 } p.abt-cont {
     text-align: justify;
     text-justify: inter-word;
-} .f-abt > div {
+} 
+/* .f-abt > div {
     background-color: green;
     display: block;
     padding: 15px !important;
@@ -359,4 +360,4 @@ p.abt-cont {
     align-items: center;
 } .f-cnt form input[type="text"] , .f-cnt form textarea {
     width: 20em;
-}
+} */
