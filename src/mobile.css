@@ -4,7 +4,7 @@
     } */
     .element-body {
         overflow: hidden;
-        /* padding-bottom:0 !important; */
+        padding-bottom:0 !important;
     }
     .front-cont {
         display: flex;
@@ -82,7 +82,7 @@
     } .news {
         width: 90vw !important;
     }
-    /* .navbar .nav-cont-1 ul { 
+    .navbar .nav-cont-1 ul { 
         display: flex;
-    } */
+    }
 }
