@@ -34,6 +34,7 @@ function ApiTest() {
         document.getElementById('gam').classList.add('api-nav-active');
         document.getElementById('weather').style.display = 'none';
         document.getElementById('gameNews').style.display = 'flex';
+        document.getElementById('news-load').style.display = 'block';
 
 
         await fetch("https://gaming-news.p.rapidapi.com/news", {
@@ -84,7 +85,7 @@ function ApiTest() {
     let  displayProd;
     let pageCount;
 
-    if(data) {
+    if(data && data[0]) {
          displayProd =  data.slice(pagesVisited, pagesVisited+perPage).map((news)=>
             { return(
                 <div className='news'>
@@ -133,7 +134,7 @@ function ApiTest() {
             <div id='gameNews'>
             { data ?
                 <div className='api-body'>
-                    {displayProd ? displayProd : "LOADING..."}
+                    { displayProd && displayProd === 'Nothing here' ? <div className='load-symb' id='news-load' ><img src="/img/loadin.svg"  alt="error404" /></div> : displayProd}
                 <div style={{'display':'flex','justifyContent':'center','alignItems':'center','minHeight':'7em'}}>
                 {  pageCount > 1 ?
                     <ReactPaginate
