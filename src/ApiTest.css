@@ -87,4 +87,6 @@
     text-decoration: none;
 } .news-url {
     overflow: hidden;
-} 
+} #news-load {
+    display: none;
+}
