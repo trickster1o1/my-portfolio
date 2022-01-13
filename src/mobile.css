@@ -84,5 +84,9 @@
     }
     .navbar .nav-cont-1 ul { 
         display: flex;
+    } #t1 , #t2 , #t3 , #t4 , #t5 , #t6 {
+        display: none;
+    } .t-mob {
+        display: flex;
     }
 }
