@@ -98,100 +98,48 @@
     transition: transform .2s ease-in-out;
 } .t-1 {
     position: absolute;
-    top: 15%;
-    right: 67.5%;
+    
     background: url('../public/img/react.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     z-index:10;
-} .ta-1 {
-    top: 65%;
-    right: 110%;
-    animation: fly 2s linear;
-} .tb-1 {
-    animation: flyB 2s linear;
 } .t-2 {
     position: absolute;
-    top: 40%;
-    right: 77.5%;
+    
     background: url('../public/img/laravel.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
-} .ta-2 {
-    top: 65%;
-    right: 110%;
-    animation: fly2 2s linear;
-} .tb-2 {
-    top: 40%;
-    right: 77.5%;
-    animation: flyB2 2s linear;
-}  .t-3 {
+} .t-3 {
     position: absolute;
-    top: 65%;
-    right: 67.5%;
+   
     background: url('../public/img/git.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
-} .ta-3 {
-    top: 65%;
-    right: 110%;
-    animation: fly3 2s linear;
-} .tb-3 {
-    top: 65%;
-    right: 67.5%;
-    animation: flyB3 2s linear;
 } .t-4 {
     position: absolute;
-    top: 15%;
-    right: 20%;
+    
     background: url('../public/img/ps.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
-}.ta-4 {
-    top: 65%;
-    right: 110%;
-    animation: fly4 2s linear;
-}.tb-4 {
-    top: 15%;
-    right: 20%;
-    animation: flyB4 2s linear;
 } .t-5 {
     position: absolute;
-    top: 40%;
-    right: 10%;
+    
     background: url('../public/img/illu.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
-}.ta-5 {
-    top: 65%;
-    right: 110%;
-    animation: fly5 2s linear;
-} .tb-5 {
-    top: 40%;
-    right: 10%;
-    animation: flyB5 2s linear;
-}  .t-6 {
+} .t-6 {
     position: absolute;
-    top: 65%;
-    right: 20%;
+    
     border: 2px #231F20 solid;
     background: url('../public/img/html.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
-}.ta-6 {
-    top: 65%;
-    right: 110%;
-    animation: fly6 1.5s linear;
-} .tb-6 {
-    top: 65%;
-    right: 20%;
-    animation: flyB6 1.5s linear;
 } .talent:hover {
     transform: scale(1.1);
 }    
@@ -360,4 +308,6 @@ p.abt-cont {
     align-items: center;
 } .f-cnt form input[type="text"] , .f-cnt form textarea {
     width: 20em;
+} .t-mob {
+    display: none;
 }

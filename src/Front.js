@@ -34,6 +34,12 @@ function Front() {
                 overflowY: 'auto',
                 delay: -1
             });     
+            document.getElementById('t1').classList.add('t-1-ani');
+            document.getElementById('t2').classList.add('t-2-ani');
+            document.getElementById('t3').classList.add('t-3-ani');
+            document.getElementById('t4').classList.add('t-4-ani');
+            document.getElementById('t5').classList.add('t-5-ani');
+            document.getElementById('t6').classList.add('t-6-ani');
                     gsap.to('.f-abt', {
                         scrollTrigger: {
                             trigger: '.f-abt',
@@ -63,41 +69,50 @@ function Front() {
                         left: '20%',
                         scale: 0.8,
                     });  
-                    gsap.to('.t-1',{
+                    gsap.fromTo('.t-1-ani',
+                        {top: '15%',right: '67.5%'},
+                        {right:'110%',top:'-10%',
                         scrollTrigger: {
                             trigger: '.f-abt',
                             scrub: true,
                             toggleActions: 'restart pause resume pause'
-                        },
-                        right:'110%',top:'-10%'})
+                        }
+                    });
                   
-                    gsap.to('.t-2',{scrollTrigger: {
+                    gsap.fromTo('.t-2-ani',
+                    {top: '40%',right: '77.5%'},{scrollTrigger: {
                         trigger: '.f-abt',
                         scrub: true,
                         toggleActions: 'restart pause resume pause'
-                    },right:'110%',delay:-1});
-                    gsap.to('.t-3',{scrollTrigger: {
+                    },right:'110%'});
+                    gsap.fromTo('.t-3-ani',{top: '65%',right: '67.5%'},{scrollTrigger: {
                         trigger: '.f-abt',
                         scrub: true,
                         toggleActions: 'restart pause resume pause'
-                    },right:'110%',top:'90%',delay:-1});
-                    gsap.to('.t-4',{scrollTrigger: {
+                    },right:'110%',top:'90%'});
+                    gsap.fromTo('.t-4-ani',{top: '15%',right: '20%'},{scrollTrigger: {
                         trigger: '.f-abt',
                         scrub: true,
                         toggleActions: 'restart pause resume pause'
-                    },right:'-20%',top:'-10%',delay:-1});
-                    gsap.to('.t-5',{scrollTrigger: {
+                    },right:'-20%',top:'-10%'});
+                    gsap.fromTo('.t-5-ani',{top: '40%',right: '10%'},{scrollTrigger: {
                         trigger: '.f-abt',
                         scrub: true,
                         toggleActions: 'restart pause resume pause'
-                    },right:'-20%',delay:-1});
-                    gsap.to('.t-6',{scrollTrigger: {
+                    },right:'-20%'});
+                    gsap.fromTo('.t-6-ani',{top: '65%',right: '20%'},{scrollTrigger: {
                         trigger: '.f-abt',
                         scrub: true,
                         toggleActions: 'restart pause resume pause'
-                    },right:'-20%',top:'90%',delay:-1});
+                    },right:'-20%',top:'90%'});
             }
-     else {
+     else if(deviceWidth < 750) {
+                // document.getElementById('t1').classList.remove('t-1-ani');
+                // document.getElementById('t2').classList.remove('t-2-ani');
+                // document.getElementById('t3').classList.remove('t-3-ani');
+                // document.getElementById('t4').classList.remove('t-4-ani');
+                // document.getElementById('t5').classList.remove('t-5-ani');
+                // document.getElementById('t6').classList.remove('t-6-ani');
                 document.getElementById('f-abt').style.display = "none";
                 document.getElementById('f-cnt').style.display = "none";
     }
@@ -206,7 +221,6 @@ function Front() {
                     fade.play();
                 }
             }
-
             document.getElementById('abt').style.display = 'block';
             document.getElementById('abt').classList.remove('fout');
             document.getElementById('abt').classList.add('fin');
@@ -279,6 +293,24 @@ function Front() {
                     </div>
 
                     <div className='talent  t-6'  id='t6'>
+                    </div>
+
+                    <div className='talent t-1 t-mob'>
+                    </div>
+
+                    <div className='talent  t-mob  t-2'>
+                    </div>
+
+                    <div className='talent  t-mob  t-3'>
+                    </div>
+
+                    <div className='talent  t-mob t-4'>
+                    </div>
+
+                    <div className='talent  t-mob  t-5'>
+                    </div>
+
+                    <div className='talent  t-6  t-mob'>
                     </div>
                     
                 </div>
