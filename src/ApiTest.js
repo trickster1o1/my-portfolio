@@ -7,7 +7,7 @@ function ApiTest() {
     const [weather,setWeather] = useState([]);
     const [data,setData] = useState([]);
     const [dicData,setDicData] = useState([]);
-    // const [srchTxt, setSrchTxt] = useState('');
+    const [srchTxt, setSrchTxt] = useState('');
     useEffect(() => {
         document.getElementById('wth').classList.add('api-nav-active');
         let fetchIp = async () => {
@@ -81,18 +81,24 @@ function ApiTest() {
             .catch((error)=>console.log(error));
     }
 
-    let showDict = async () => {
+    let showDict = () => {
         document.getElementById('dic').classList.add('api-nav-active');
         document.getElementById('wth').classList.remove('api-nav-active');
         document.getElementById('gam').classList.remove('api-nav-active');
         document.getElementById('weather').style.display = 'none';
         document.getElementById('gameNews').style.display = 'none';
         document.getElementById('dictionary').style.display = 'block';
-        await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
+        
+    }
+
+    let srchDic = async () => {
+        await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+srchTxt)
         .then((res)=>res.json())
         .then((r)=>{
-            // console.log(r)
+            console.log(r)
             setDicData(r);
+            document.getElementById('au').src = r[0].phonetics[0].audio;
+            console.log(document.getElementById('au').src);
         })
         .catch((e)=>console.log(e));
     }
@@ -181,10 +187,18 @@ function ApiTest() {
             </div>
 
             <div id='dictionary'>
-                <main className='dic-main' align='center'><input type="text" /> <button>Search</button></main>
+                <main className='dic-main' align='center'><input type="text" placeholder='Search...' onChange={(e)=>setSrchTxt(e.target.value)} /><button onClick={srchDic}>Search</button></main>
                 {dicData && dicData[0] ? 
                 <div>
                     <h2>{dicData[0].word.toUpperCase()}</h2>
+                    {
+                        dicData && dicData[0] ? 
+                            <div className='audio-cont'>
+                                <audio controls>
+                                    <source id='au' type='audio/mpeg' />
+                                </audio>
+                            </div>
+                    : null}
                     {dicData.map((mng) => 
                         mng.meanings.map((m) => 
                             m.definitions.map((defination) =>
@@ -194,10 +208,10 @@ function ApiTest() {
                                 <div><b>Eg:</b> {defination.example}</div>
                             </div>
                             )
-                        )
+                        )                    
                     )}
-                 </div>
-                : <div>Loading...</div>}
+                 </div> :
+                 dicData && dicData.message ? <div>{dicData.message}</div> : <div>Loading...</div>}
             </div>
         </>
     )
