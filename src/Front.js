@@ -40,6 +40,8 @@ function Front() {
             document.getElementById('t4').classList.add('t-4-ani');
             document.getElementById('t5').classList.add('t-5-ani');
             document.getElementById('t6').classList.add('t-6-ani');
+            document.getElementById('f-abt').style.display = "block";
+            document.getElementById('f-cnt').style.display = "block";
                     gsap.to('.f-abt', {
                         scrollTrigger: {
                             trigger: '.f-abt',
@@ -52,9 +54,10 @@ function Front() {
                     gsap.to('.f-cnt', {
                         scrollTrigger: {
                             trigger: '.f-cnt',
-                            toggleActions: 'restart pause resume pause',
+                            start: 'top center',
+                            toggleActions: 'restart reverse reverse reverse',
                         },
-                        x:-1250,
+                        x:-1150,
                         duration: 1
                     });
         

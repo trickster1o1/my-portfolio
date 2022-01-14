@@ -236,13 +236,19 @@
     display: none;
 } p {
     padding-top: 15px !important;
-} form > div {
-    padding-right: 25% !important;
 } input[type='submit'] {
     padding: 10px !important;
     outline: none;
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
+    background-color: rgba(200,50,50,1);
+    color: white;
+    transform: scale(1);
+    width: 7em !important;
+} input[type='submit']:hover {
+    background-color: rgba(150,50,50,.5);
+    transform: scale(1.05);
+    transition: background-color .2s ease-in-out, transform .2s ease-in-out;
 } .contact-cont , .abt-cont {
     animation: contFade .3s ease-in;
 } @keyframes contFade {
@@ -296,7 +302,7 @@ p.abt-cont {
     text-justify: inter-word;
     padding: 15px !important;
 } .f-cnt {
-    width: 25%;
+    width: 40%;
     position: absolute;
     top: 180%;
     right: -50%;
@@ -307,7 +313,7 @@ p.abt-cont {
     padding: 15px !important;
     align-items: center;
 } .f-cnt form input[type="text"] , .f-cnt form textarea {
-    width: 20em;
+    width: 30em;
 } .t-mob {
     display: none;
 }
