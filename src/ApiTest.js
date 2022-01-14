@@ -7,7 +7,7 @@ function ApiTest() {
     const [weather,setWeather] = useState([]);
     const [data,setData] = useState([]);
     const [dicData,setDicData] = useState([]);
-    const [srchTxt, setSrchTxt] = useState('');
+    // const [srchTxt, setSrchTxt] = useState('');
     useEffect(() => {
         document.getElementById('wth').classList.add('api-nav-active');
         let fetchIp = async () => {
@@ -181,7 +181,7 @@ function ApiTest() {
             </div>
 
             <div id='dictionary'>
-                <main className='dic-main' align='center'><input type="text" onChange={(e)=>setSrchTxt(e.target.value)} /> <button>Search</button></main>
+                <main className='dic-main' align='center'><input type="text" /> <button>Search</button></main>
                 {dicData && dicData[0] ? 
                 <div>
                     <h2>{dicData[0].word.toUpperCase()}</h2>
