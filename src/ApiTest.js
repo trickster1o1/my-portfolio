@@ -6,6 +6,8 @@ function ApiTest() {
 
     const [weather,setWeather] = useState([]);
     const [data,setData] = useState([]);
+    const [dicData,setDicData] = useState([]);
+    const [srchTxt, setSrchTxt] = useState('');
     useEffect(() => {
         document.getElementById('wth').classList.add('api-nav-active');
         let fetchIp = async () => {
@@ -31,8 +33,10 @@ function ApiTest() {
 
     let showNews = async () => {
         document.getElementById('wth').classList.remove('api-nav-active');
+        document.getElementById('dic').classList.remove('api-nav-active');
         document.getElementById('gam').classList.add('api-nav-active');
         document.getElementById('weather').style.display = 'none';
+        document.getElementById('dictionary').style.display = 'none';
         document.getElementById('gameNews').style.display = 'flex';
         document.getElementById('news-load').style.display = 'block';
 
@@ -54,8 +58,10 @@ function ApiTest() {
     let showWeather = async () => {
         document.getElementById('wth').classList.add('api-nav-active');
         document.getElementById('gam').classList.remove('api-nav-active');
+        document.getElementById('dic').classList.remove('api-nav-active');
         document.getElementById('weather').style.display = 'block';
         document.getElementById('gameNews').style.display = 'none';
+        document.getElementById('dictionary').style.display = 'none';
 
         await fetch('https://api.ipify.org/?format=json')
             .then(res=>res.json())
@@ -73,6 +79,22 @@ function ApiTest() {
                 .catch((error)=>console.log(error));
             })
             .catch((error)=>console.log(error));
+    }
+
+    let showDict = async () => {
+        document.getElementById('dic').classList.add('api-nav-active');
+        document.getElementById('wth').classList.remove('api-nav-active');
+        document.getElementById('gam').classList.remove('api-nav-active');
+        document.getElementById('weather').style.display = 'none';
+        document.getElementById('gameNews').style.display = 'none';
+        document.getElementById('dictionary').style.display = 'block';
+        await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
+        .then((res)=>res.json())
+        .then((r)=>{
+            // console.log(r)
+            setDicData(r);
+        })
+        .catch((e)=>console.log(e));
     }
 
     let [pageNumber, setPageNumber] = useState(0);
@@ -112,7 +134,7 @@ function ApiTest() {
             <div className="api-nav">
                 <nav id='wth' onClick={showWeather} >Weather</nav>
                 <nav id='gam' onClick={showNews}>Game News</nav>
-                <nav>another 1</nav>
+                <nav id='dic' onClick={showDict} >Dicionary</nav>
             </div>
             <div id='weather'>
             { weather && weather.location ?
@@ -156,6 +178,26 @@ function ApiTest() {
                 </div> 
                 : "LOADING..."
             }
+            </div>
+
+            <div id='dictionary'>
+                <main className='dic-main' align='center'><input type="text" onChange={(e)=>setSrchTxt(e.target.value)} /> <button>Search</button></main>
+                {dicData && dicData[0] ? 
+                <div>
+                    <h2>{dicData[0].word.toUpperCase()}</h2>
+                    {dicData.map((mng) => 
+                        mng.meanings.map((m) => 
+                            m.definitions.map((defination) =>
+                            <div className='inner-cont'> 
+                                <span>{m.partOfSpeech}</span>
+                                <div><b>DEFINATION:</b> {defination.definition}</div>
+                                <div><b>Eg:</b> {defination.example}</div>
+                            </div>
+                            )
+                        )
+                    )}
+                 </div>
+                : <div>Loading...</div>}
             </div>
         </>
     )
