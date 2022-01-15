@@ -1,4 +1,5 @@
 import './ApiTest.css';
+import './mobile.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
@@ -37,6 +38,7 @@ function ApiTest() {
         document.getElementById('gam').classList.add('api-nav-active');
         document.getElementById('weather').style.display = 'none';
         document.getElementById('dictionary').style.display = 'none';
+        document.getElementById('dic-ref').style.display = 'block';
         document.getElementById('gameNews').style.display = 'flex';
         document.getElementById('news-load').style.display = 'block';
 
@@ -59,6 +61,7 @@ function ApiTest() {
         document.getElementById('wth').classList.add('api-nav-active');
         document.getElementById('gam').classList.remove('api-nav-active');
         document.getElementById('dic').classList.remove('api-nav-active');
+        document.getElementById('dic-ref').style.display = 'none';
         document.getElementById('weather').style.display = 'block';
         document.getElementById('gameNews').style.display = 'none';
         document.getElementById('dictionary').style.display = 'none';
@@ -87,6 +90,7 @@ function ApiTest() {
         document.getElementById('gam').classList.remove('api-nav-active');
         document.getElementById('weather').style.display = 'none';
         document.getElementById('gameNews').style.display = 'none';
+        document.getElementById('dic-ref').style.display = 'none';
         document.getElementById('dictionary').style.display = 'block';
         
     }
@@ -95,14 +99,16 @@ function ApiTest() {
         await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+srchTxt)
         .then((res)=>res.json())
         .then((r)=>{
-            console.log(r)
             setDicData(r);
             document.getElementById('au').src = r[0].phonetics[0].audio;
-            console.log(document.getElementById('au').src);
         })
         .catch((e)=>console.log(e));
     }
-
+    let triggerSrch = (e) => {
+        if(e.key === 'Enter'){
+            srchDic();
+        }
+    }
     let [pageNumber, setPageNumber] = useState(0);
     let perPage = 5;
     let pagesVisited = pageNumber * perPage;
@@ -143,6 +149,7 @@ function ApiTest() {
                 <nav id='dic' onClick={showDict} >Dicionary</nav>
             </div>
             <div id='weather'>
+            <span className='ref-api'>API from: <a href='https://rapidapi.com/weatherapi/api/weatherapi-com/'>https://rapidapi.com/weatherapi/api/weatherapi-com/</a></span>
             { weather && weather.location ?
                 <div className='api-body'>
                     <div> <h2>{weather.location.country + ", " + weather.location.name}</h2> </div>
@@ -159,10 +166,14 @@ function ApiTest() {
                 : <div className='load-symb'><img src="/img/loadin.svg"  alt="error404" /></div>
             }
             </div>
+            <span className='ref-api' id='dic-ref'>API from: <a href='https://rapidapi.com/alexaustin9816@gmail.com/api/gaming-news'>https://rapidapi.com/alexaustin9816@gmail.com/api/gaming-news</a></span>
+
             <div id='gameNews'>
+
             { data ?
                 <div className='api-body'>
-                    { displayProd && displayProd === 'Nothing here' ? <div className='load-symb' id='news-load' ><img src="/img/loadin.svg"  alt="error404" /></div> : displayProd}
+                    
+                    { displayProd && displayProd === 'Nothing here' ? <div className='load-symb load-news' id='news-load' ><img src="/img/bean.svg"  alt="error404" /></div> : displayProd}
                 <div style={{'display':'flex','justifyContent':'center','alignItems':'center','minHeight':'7em'}}>
                 {  pageCount > 1 ?
                     <ReactPaginate
@@ -187,7 +198,9 @@ function ApiTest() {
             </div>
 
             <div id='dictionary'>
-                <main className='dic-main' align='center'><input type="text" placeholder='Search...' onChange={(e)=>setSrchTxt(e.target.value)} /><button onClick={srchDic}>Search</button></main>
+            <span className='ref-api'>API from: <a href='https://dictionaryapi.dev'>https://dictionaryapi.dev</a></span>
+
+                <main className='dic-main' align='center'><input type="text" placeholder='Search...' onChange={(e)=>setSrchTxt(e.target.value)} onKeyPress={(e)=>triggerSrch(e)} /><button onClick={srchDic}>Search</button></main>
                 {dicData && dicData[0] ? 
                 <div>
                     <h2>{dicData[0].word.toUpperCase()}</h2>
@@ -211,7 +224,7 @@ function ApiTest() {
                         )                    
                     )}
                  </div> :
-                 dicData && dicData.message ? <div>{dicData.message}</div> : <div>Loading...</div>}
+                 dicData && dicData.message ? <div>{dicData.message}</div> : <div className='load-symb load-dic'><img alt='Loading...' src='/img/dic-load.gif' /></div>}
             </div>
         </>
     )

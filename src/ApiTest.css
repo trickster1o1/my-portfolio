@@ -64,6 +64,7 @@
     align-self: flex-start;
     padding: 15px !important;
     margin-bottom: .5em !important;
+    width: 50vw;
 } #gameNews {
     display: flex;
     justify-content: center;
@@ -91,6 +92,7 @@
     display: none;
 } #dictionary {
     display: none;
+    overflow-y: auto;
 } #dictionary > div {
     display: flex;
     flex-direction: column;
@@ -130,4 +132,14 @@
 } main button:hover {
     background-color: rgb(125, 150, 200);
     transition:  color .5s ease-in-out;
-}
+} .load-dic img{
+    width: 10em !important;
+    height: 8em !important;
+} span.ref-api  {
+    display: block;
+    padding-top: 1em !important;
+    text-align: center;
+    font-weight: bold;
+} #dic-ref {
+    display: none;
+} 
