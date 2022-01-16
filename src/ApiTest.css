@@ -142,4 +142,6 @@
     font-weight: bold;
 } #dic-ref {
     display: none;
-} 
+} #dictionary {
+    padding-bottom: 2em !important;
+}
