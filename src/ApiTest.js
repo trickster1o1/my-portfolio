@@ -207,7 +207,7 @@ function ApiTest() {
                     {
                         dicData && dicData[0] ? 
                             <div className='audio-cont'>
-                                <audio controls>
+                                <audio key={dicData[0].word} controls>
                                     <source id='au' type='audio/mpeg' />
                                 </audio>
                             </div>
